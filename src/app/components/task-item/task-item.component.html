@@ -1,0 +1,9 @@
+<div class="task-card">
+    <div>{{task().id}}</div>
+    <div>{{task().title}}</div>
+    <div>{{task().description}}</div>
+    <div>{{task().completed}}</div>
+    <input type="checkbox" [id]="'task-' + task().id" [checked]="task().completed" (change)="onToggle()" />
+    <label for="'task-' + task().id">Completed</label>
+    <div>{{task().createdAt | date:'short'}}</div>
+</div>

@@ -1,0 +1,11 @@
+@for (task of tasks(); track task.id) {
+<app-task-item [task]="task" (toggleComplete)="toggleTaskComplete($event)" />
+} @empty {
+<div>No tasks yet!</div>
+}
+<div class="count">Total tasks: {{totalTasks()}}</div>
+<div class="count">Completed tasks: {{completedTasks()}}</div>
+<div class="count">Active tasks: {{activeTasks()}}</div>
+<button (click)="addDummyTask()">Add dummy task</button>
+<button (click)="save()">Save to local storage</button>
+<button (click)="redirect()">Redirect</button>
